@@ -24,3 +24,6 @@ predictionProbability <- ifelse(predictWithNewData > 0.5, 1, 0)
 
 #OverTime - Confusion Matrix - gives us true positives and negatives as well as false positives and negatives
 table(cleanedTestData$OverTime, predictionProbability)
+
+missingClassError <- mean(predictionProbability != cleanedTestData$OverTime)
+print(paste('Accuracy =', 1 - missingClassError))
