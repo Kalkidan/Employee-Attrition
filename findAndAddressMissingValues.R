@@ -8,18 +8,16 @@
 library(readxl)
 
 #A function that will handle phase one of the CRISP-DM process.
-findAndAddressMissingValues <- function() {
+#@param pathToSource - this is path to data source we want to clean.
+findAndAddressMissingValues <- function(pathToSource) {
     #Print and check if the working directory is what we need
     print(getwd())
 
     #if the desired directory is not the current one - uncomment this block and enter the desired one.
-
     #setwd("")
 
-    #If the file is EXCEL then we need to covert that to CSVFor this project we will be using CSV file and convert EXCEL ones to CSV first. Ublock this line if you need to convert the file to CSV from EXCEL
-
-    #Read the EXCEL file
-    data <- read_excel(path = '/Users/kal/Downloads/Attrition-Proj1EmpAttrTrain.xlsx')
+    #For this project input type is assumed to be an excel format, hence, we need to convert it to csv format first.
+    data <- read_excel(pathToSource)
 
     #This is where we create vector of excel files to be read.
     files.to.read = list.files(pattern="xlsx")
