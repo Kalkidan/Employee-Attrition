@@ -25,5 +25,6 @@ predictionProbability <- ifelse(predictWithNewData > 0.5, 1, 0)
 #OverTime - Confusion Matrix - gives us true positives and negatives as well as false positives and negatives
 table(cleanedTestData$OverTime, predictionProbability)
 
+#Find accuracy for the attrition predictive based on attrition
 missingClassError <- mean(predictionProbability != cleanedTestData$OverTime)
 print(paste('Accuracy =', 1 - missingClassError))

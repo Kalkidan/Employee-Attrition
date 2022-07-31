@@ -8,6 +8,8 @@
 source("findAndAddressMissingValues.R")
 source("utility.R")
 
+#This block of function takes care of the feature selection phase when called from anywhere on any given EXCEL data
+#@param file path of the data to be cleaned. 
 selection <- function(filePath) {
     
     #Step - 1 Find and Address Missing Values
